@@ -13,8 +13,10 @@ class Search extends Component {
   render() {
     return (
       <View style={ style.container }>
-        <View style={style.button}>
-          <TouchableOpacity onPress={this.props.getRandomBeer}>
+        <View>
+          <TouchableOpacity style={[style.button, this.props.isFetching && style.buttonInactive]}
+                            disabled={this.props.isFetching}
+                            onPress={this.props.getRandomBeer} >
             <Text style={style.button__text}>
               Fetch me a beer !
             </Text>
@@ -27,7 +29,7 @@ class Search extends Component {
 
 function mapStateToProps(state) {
   return {
-    state
+    isFetching: state.isFetching
   };
 }
 
@@ -44,8 +46,8 @@ const style = StyleSheet.create({
     height: 100,
     alignItems: 'center',
     justifyContent:'center',
-    borderBottomColor: '#B53409',
-    borderBottomWidth: 1,
+    borderTopColor: '#B53409',
+    borderTopWidth: 1,
   },
   button: {
     justifyContent: 'center',
@@ -54,6 +56,9 @@ const style = StyleSheet.create({
     backgroundColor:'#9E1000',
     height: 50,
     width: 250,
+  },
+  buttonInactive: {
+    backgroundColor:'#858585',
   },
   button__text: {
     color: 'white',

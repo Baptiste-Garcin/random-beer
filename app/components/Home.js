@@ -10,8 +10,8 @@ export default class Home extends Component {
   render() {
     return (
       <View style={ style.container }>
-        <Search style={ style.search }/>
         <Display style={ style.display }/>
+        <Search style={ style.search }/>
       </View>
     );
   }
@@ -19,7 +19,7 @@ export default class Home extends Component {
 
 const style = StyleSheet.create({
   container: {
-    flex:1
+    flex:1,
   },
   search: {
     flex: 1,
