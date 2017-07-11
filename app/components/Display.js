@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import {
   View,
   Text,
-  Image,
   ActivityIndicator,
   StyleSheet,
   ScrollView
 } from 'react-native';
-
+import Image from 'react-native-image-progress';
 
 class Display extends Component {
   render () {
@@ -16,8 +15,8 @@ class Display extends Component {
       return (
         <View style={ style.activityIndicator } >
           <ActivityIndicator
-            size="large"
-            color="#B53409"
+            size='large'
+            color='#B53409'
           />
         </View>
       );
@@ -26,7 +25,13 @@ class Display extends Component {
       return (
         <View style={ style.container }>
           <View style={ style.image }>
-            <Image style={ style.image__element } source={{uri: this.props.randomBeer.image_url }}></Image>
+            <Image style={ style.image__element }
+                  source={{uri: this.props.randomBeer.image_url }}
+                  indicatorProps={{
+                    color: '#B53409',
+                    size: 'large'
+                  }}
+                  ></Image>
           </View>
           <View style={ style.info }>
             <Text style={ style.info__title }>{ this.props.randomBeer.name }</Text>
@@ -73,19 +78,18 @@ const style = StyleSheet.create({
   },
   container: {
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
+    padding: 15
   },
   image: {
     flex:1,
-    padding: 10
+    marginRight: 20
   },
   image__element: {
-    resizeMode: 'contain',
     flex: 1
   },
   info: {
     flex: 2,
-    padding: 10
   },
   info__title: {
     fontSize: 30,
