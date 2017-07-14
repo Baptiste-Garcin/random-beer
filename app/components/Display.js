@@ -7,7 +7,7 @@ import {
   StyleSheet,
   ScrollView
 } from 'react-native';
-import Image from 'react-native-image-progress';
+import Image from './ImageProgress';
 
 class Display extends Component {
   render () {
