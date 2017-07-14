@@ -31,6 +31,9 @@ class Display extends Component {
                     color: '#B53409',
                     size: 'large'
                   }}
+                  imageProps={{
+                    resizeMode: 'contain',
+                  }}
                   ></Image>
           </View>
           <View style={ style.info }>
