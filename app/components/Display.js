@@ -7,7 +7,7 @@ import {
   StyleSheet,
   ScrollView
 } from 'react-native';
-import Image from 'react-native-image-progress';
+import Image from './ImageProgress';
 
 class Display extends Component {
   render () {
@@ -30,6 +30,9 @@ class Display extends Component {
                   indicatorProps={{
                     color: '#B53409',
                     size: 'large'
+                  }}
+                  imageProps={{
+                    resizeMode: 'contain',
                   }}
                   ></Image>
           </View>
