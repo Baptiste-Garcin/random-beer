@@ -15,8 +15,6 @@ export function isFetching (state = false, action) {
     return true;
   case actionList.SET_GET_BEER:
     return false;
-  case actionList.NETWORK_ERROR:
-    return false;
   default:
     return state;
   }

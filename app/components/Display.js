@@ -21,15 +21,6 @@ class Display extends Component {
         </View>
       );
     }
-    if (this.props.error != null) {
-        return (
-            <View style={ style.errorContainer }>
-                <Text style={ style.errorText }>
-                    {this.props.error.errorMessage}
-                </Text>
-            </View>
-        );
-    }
     if (this.props.randomBeer) {
       return (
         <View style={ style.container }>
@@ -59,7 +50,8 @@ class Display extends Component {
         <View style={ style.quoteContainer }>
           <View style={ style.quote }>
             <Text style={ style.quote__text }>
-              “You can t be a real country unless you have a beer and an airline- it helps if you have some kind of football team, or some nuclear weapons,
+              “You can't be a real country unless you have a beer and an airline
+              - it helps if you have some kind of football team, or some nuclear weapons,
               but in the very least you need a beer.”
             </Text>
           </View>
@@ -75,8 +67,7 @@ class Display extends Component {
 function mapStateToProps (state) {
   return {
     randomBeer: state.randomBeer,
-    isFetching: state.isFetching,
-    error:      state.error
+    isFetching: state.isFetching
   };
 }
 
@@ -88,19 +79,10 @@ const style = StyleSheet.create({
     alignItems: 'center',
     justifyContent:'center',
   },
-  errorContainer: {
-      flex: 1,
-      padding: 50,
-      justifyContent:'center',
-  },
-  errorText: {
-      fontSize: 30,
-      textAlign: 'center',
-  },
   container: {
     flex: 1,
     flexDirection: 'row',
-    padding: 25
+    padding: 15
   },
   image: {
     flex:1,
