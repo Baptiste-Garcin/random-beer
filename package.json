@@ -11,8 +11,12 @@
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-react-native": "^2.3.2",
+<<<<<<< HEAD
     "react": "16.0.0-alpha.12",
     "react-native": "0.46.0",
+===
+    "react-native-fetch-polyfill": "^1.1.2",
+>>>>>>> 55222ab... Fix error handling
     "react-redux": "^5.0.5",
     "redux": "^3.7.1",
     "redux-logger": "^3.0.6",
